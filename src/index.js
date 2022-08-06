@@ -1,4 +1,4 @@
-//import "./index.css";
+import "./index.css";
 
 //get button
 const btn = document.querySelector("#searchBtn"); //get button element
