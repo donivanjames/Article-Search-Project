@@ -1,4 +1,4 @@
-import "./index.css";
+//import "./index.css";
 
 //get button
 const btn = document.querySelector("#searchBtn"); //get button element
@@ -25,7 +25,7 @@ btn.addEventListener("click", (e) => {
 function showErrorMessage(articleList) {
   const container = document.querySelector(".articles");
 
-  articleList.forEach((a) => a.classList.add("hidden")); //hide all articles
+  articleList.forEach((a) => (a.style.display = "none")); //hide all articles
 
   //add error text
   container.innerHTML += `<div class="error" id="searchError">Please enter a search term</div>`;
@@ -38,9 +38,11 @@ function checkForBlankInput(input) {
 function filterArticlesBySearch(articleList, searchTerm) {
   articleList.forEach((a) =>
     a.innerText.toLowerCase().includes(searchTerm)
-      ? a.classList.remove("hidden")
-      : a.classList.add("hidden")
+      ? (a.style.display = "block")
+      : (a.style.display = "none")
   );
+
+  console.log(articleList);
 }
 
 function getAllArticleElements() {
